@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+</head>
+<style>
+    body
+    {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    .d0 {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: center;
+        background-color: brown;
+    }
+    .d1 {
+        width: 750px;
+        height: 750px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .d2 {
+        width: 200px;
+        height: 475px;
+        margin-right: 25px;
+        margin-top: 100px;  
+        display: flex;
+        flex-direction: column; 
+        justify-content: space-around;
+        background-color: rgba(0, 0, 0, 0.699);
+    }
+    .d3 {
+        width: 450px;
+        height: 475px;
+        margin-left: auto;
+        margin-right: 25px;
+        margin-top: 100px;  
+        background-color: rgba(0, 0, 0, 0.699);
+    }
+    .comprar
+    {
+        color: white;
+        margin-top: -20px;
+    }
+    .total_compra
+    {
+        color: white;
+        margin-bottom: 160px;
+
+    }
+</style>
+<body>
+    <div class="d0">
+        <div class="d1">
+            <div class="d3">
+                <div class="produtos " style="color: white;">
+                    <!-- Aqui você pode adicionar os produtos do carrinho -->
+                    <h2>Produtos no carrinho:</h2>
+                    <ul>
+                        <li>Produto 1</li>
+                        <li>Produto 2</li>
+                        <li>Produto 3</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d2">
+                <div class="comprar">
+                    <!-- Aqui você pode adicionar o botão de finalizar compra -->
+                    <h2>Finalizar Compra</h2>
+                    <button>Finalizar</button>
+                </div>
+                <div class="total_compra">
+                    <!-- Aqui você pode exibir o total da compra -->
+                    <h2>Total da Compra:</h2>
+                    <p>R$ 100,00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
