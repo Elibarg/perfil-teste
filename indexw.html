@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body
+    {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    overflow: hidden;
+    }
+    .d1 
+    {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: center;
+    }
+    .d2 
+    {
+        width: 25%;
+        height: 85%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+    }
+    .d3 
+    {
+        width: 25%;
+        height: 55%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 185px;
+    }
+    .foto {
+        width: 90%;
+        height: 90%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        background-color: #5c5b9ca1;
+        color: white;
+    }
+
+    #imagem-preview {
+        width: 200px; /* Defina o tamanho desejado para a imagem */
+        height: auto; /* A altura será ajustada proporcionalmente */
+        display: none;
+    }
+    .inf 
+    {
+        width: 80%;
+        height: 90%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        background-color: #5c5b9ca1;
+        color: white;
+    }
+    .pulha
+      {
+          width: 100px;
+          height: 45px;
+          background-color: yellow;
+          font-size: 16px;
+          cursor: url("cursor.png");
+          color: black;
+      }
+      .pulha:hover{
+          background-color: #ffd000;
+      }
+      .pulha2
+      {
+          width: 65px;
+          height: 45px;
+          background-color: yellow;
+          font-size: 16px;
+          cursor: url("cursor.png");
+          color: black;
+      }
+      .pulha2:hover{
+          background-color: #ffd000;
+      }
+</style>
+<body>
+    <div class="d1">
+        <div class="d3">
+            <div class="foto">
+                <form action="salvar_imagem.php" method="post" enctype="multipart/form-data">
+                    Selecione uma imagem: <input  type="file" id="imagem" name="imagem" accept="image/*" onchange="previewImagem()">
+                    <br> <br>
+                    <img id="imagem-preview" src="#" alt="Preview da imagem">
+                    <input class="pulha2" type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+    
+        <div class="d2">
+            <div class="inf">
+                <!-- Aqui é onde as informações do usuário devem ficar.
+                Adicione uma forma para o usuário poder alterar as informações dessa página -->
+                <h2>Informações do Usuário</h2>
+                <p>Nome: <span id="nome">Nome do usuário</span></p>
+                <p>Email: <span id="email">email@exemplo.com</span></p>
+                <p>Telefone: <span id="telefone">123456789</span></p>
+                <button class="pulha" id="editar">Editar Informações</button>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+<script>
+    function previewImagem() {
+        var imagemInput = document.getElementById('imagem');
+        var imagemPreview = document.getElementById('imagem-preview');
+
+        var fileReader = new FileReader();
+        fileReader.onload = function() {
+            imagemPreview.src = fileReader.result;
+            imagemPreview.style.display = 'block';
+        };
+
+        fileReader.readAsDataURL(imagemInput.files[0]);
+    }
+</script>
+</html>
